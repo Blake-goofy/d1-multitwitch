@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-multitwitch",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "multitwitchdb",
+          "database_id": "1967e77a-5b12-4ac6-a4d3-19b956ac6fef"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "fe550fd60fca474485c13b82f649b41b",
+            "binding": "SECRET",
+            "secret_name": "multitwitchsecret"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
